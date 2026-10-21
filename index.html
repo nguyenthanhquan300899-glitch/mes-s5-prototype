@@ -1006,11 +1006,9 @@ body.is-pseudo-fs .main, body.is-native-fs .main { flex: 1 1 auto; width: 1920px
 .sidebar { top: 0; height: var(--vhd, 100vh); max-height: var(--fhh); align-self: flex-start; overflow-y: auto; }
 #s01 .app, #s01 .login { height: var(--fhh); }
 
-/* s02 home: lock to viewport height, scroll inside the content area only */
-#s02 { --fhh: var(--vhd, 100vh); height: var(--fhh); min-height: 0; overflow: hidden; }
-#s02 .app { height: 100%; min-height: 0; align-items: stretch; }
-#s02 .sidebar { position: relative; top: 0; height: 100%; max-height: none; }
-#s02 .main { height: 100%; overflow-y: auto; overscroll-behavior: contain; }
+/* s01 login: fill exactly the viewport height, no page scroll */
+#s01 { --fhh: var(--vhd, 100vh); height: var(--fhh); min-height: 0; overflow: hidden; }
+#s01 .app, #s01 .login { height: 100%; min-height: 0; }
 </style>
 </head>
 <body>
