@@ -1022,6 +1022,19 @@ body.is-pseudo-fs .main, body.is-native-fs .main { flex: 1 1 auto; width: 1920px
 .app { min-height: var(--fhh); }
 .sidebar { top: 0; height: var(--vhd, 100vh); max-height: var(--fhh); align-self: flex-start; overflow-y: auto; }
 .sidebar > * { flex-shrink: 0; } /* keep brand/menu from being squeezed & clipped on short windows */
+/* Sidebar always fills the window height: brand + footer stay pinned, only the menu list scrolls when space is short */
+.sidebar { overflow: hidden; }
+.sidebar > .sb-nav { flex: 0 1 auto; min-height: 0; overflow-y: auto; scrollbar-width: thin; }
+.sidebar > .sb-nav > * { flex-shrink: 0; }
+
+/* s01 - compact login card */
+#s01 .login__card { width: 432px; gap: 16px; padding: 32px 24px 24px; }
+#s01 .login__head .t-display-m { font-size: 28px; line-height: 36px; }
+#s01 .login__fields { gap: 12px; }
+#s01 .lfield__label { font-size: 14px; line-height: 20px; }
+#s01 .lfield__ctl { height: 40px; padding: 0 12px; }
+#s01 .lfield__ctl input, #s01 .lfield__ctl select { font-size: 14px; line-height: 20px; }
+#s01 .login__btn, #s01 .login__scan { height: 40px; font-size: 16px; line-height: 24px; }
 #s01 .app, #s01 .login { height: var(--fhh); }
 
 /* s01 login: fill exactly the viewport height, no page scroll */
